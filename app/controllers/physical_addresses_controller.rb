@@ -1,0 +1,2 @@
+class PhysicalAddressesController < ApplicationController
+end

@@ -1,0 +1,22 @@
+@import "bootstrap.min";
+@import "bootstrap-theme.min";
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+/* Override Rail's default error calls with Bootstrap 3 */
+.field_with_errors {
+  @extend .has-error;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: asset_url('glyphicons-halflings-regular.eot');
+  src: asset_url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       asset_url('glyphicons-halflings-regular.woff') format('woff'),
+       asset_url('glyphicons-halflings-regular.ttf') format('truetype'),
+       asset_url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+ }
