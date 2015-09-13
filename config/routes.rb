@@ -1,3 +1,5 @@
+require 'api_constraints'
+
 Rails.application.routes.draw do
   #get 'static_pages/home'
 
@@ -10,7 +12,10 @@ Rails.application.routes.draw do
 
   root :to => 'high_voltage/pages#show', id: 'home'
 
-  namespace :api, defaults {format: :json}, constraints: {subdomain: 'api' }, path: '/' do
+  namespace :api, defaults: {format: :json}, constraints: {subdomain: 'api' }, path: '/' do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
+      resources :courses
+    end
 
   end
   resources :course_contents
@@ -21,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :contents
 
-  resources :courses
+
 
   resources :packages
 

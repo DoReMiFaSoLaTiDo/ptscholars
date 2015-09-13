@@ -60,9 +60,9 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
+  #gem 'factory_girl_rails'
   gem 'rspec-rails', '2.13.1'  #access to RSpec generators
-  gem 'faker'
+  gem 'ffaker'
   gem 'populator'
 end
 
@@ -74,3 +74,4 @@ group :test do
 end
 
 gem 'active_model_serializers'
+gem 'devise'

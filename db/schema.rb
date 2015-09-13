@@ -13,28 +13,26 @@
 
 ActiveRecord::Schema.define(version: 20150406004430) do
 
-  create_table "Addresses", force: :cascade do |t|
+  create_table "addresses", force: :cascade do |t|
+    t.string   "type"
     t.text     "street"
     t.string   "city"
-    t.string   "zip_code"
     t.string   "state"
+    t.string   "zip_code"
     t.string   "ip_address"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "type"
   end
-
-  add_index "Addresses", ["user_id"], name: "index_addresses_on_user_id"
 
   create_table "contents", force: :cascade do |t|
     t.string   "type"
-    t.string   "name"
-    t.decimal  "price"
+    t.string   "name",        default: ""
+    t.decimal  "price",       default: 0.0
     t.string   "url"
     t.string   "access_code"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "course_contents", force: :cascade do |t|
