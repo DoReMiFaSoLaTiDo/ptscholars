@@ -23,6 +23,15 @@ module Ptscholars
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.assets.initialize_on_precompile = false
+
+    # config.assets.paths << Rails.root.join("lib","assets","bower_components","angular", "angular.js")
+    config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets", "stylesheets")
+    config.assets.paths << Rails.root.join("lib","assets","bower_components","bootstrap-sass-official", "assets","fonts")
+    ## Newly Added code to set up the api code
+    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+
     # Don't generate RSpec tests for views and helpers
     config.generators do |g|
        g.test_framework :rspec, feature: true
