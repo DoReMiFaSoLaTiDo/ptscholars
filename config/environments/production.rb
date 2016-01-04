@@ -85,4 +85,5 @@ Rails.application.configure do
   if path =~ /\.(eot|svg|ttf|woff)\z/
   true
   end
+}
 end
