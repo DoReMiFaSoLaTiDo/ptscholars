@@ -4,7 +4,11 @@ angular
     'ui.router',
     'templates'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+//MyConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+//angular.module('myApp')
+  //.config('MyConfig', MyConfig);
+  //function MyConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',function ($stateProvider, $urlRouterProvider, $locationProvider) {
     /*
     * Routes and States
     */
@@ -42,4 +46,4 @@ angular
         enabled: true,
         requireBase: false
       });
-  });
+  }]);
