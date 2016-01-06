@@ -37,6 +37,31 @@ angular
         url: '/contact',
         templateUrl: 'pages/contact.html',
         controller: 'ContactCtrl'
+      })
+
+      // an abstract state that just serves as a parent for the below child states
+      .state('dashboard', {
+        abstract: true,
+        url: '/dashboard',
+        templateUrl: 'dashboard/layout.html'
+      })
+
+      // the default route when someone hits dashboard
+      .state('dashboard.one', {
+        url: '',
+        templateUrl: 'dashboard/one.html'
+      })
+
+      // dashboard two
+      .state('dashboard.two', {
+        url: '/two',
+        templateUrl: 'dashboard/two.html'
+      })
+
+      // dashboard three
+      .state('dashboard.three', {
+        url: '/three',
+        templateUrl: 'dashboard/three.html'
       });
       // default fallback Route
       $urlRouterProvider.otherwise('/');
